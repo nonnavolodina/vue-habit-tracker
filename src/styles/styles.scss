@@ -1,0 +1,9 @@
+@import '~reset-css-complete/reset.css';
+
+@import './common/header';
+@import './common/main';
+@import './common/variables';
+
+html {
+    font-family: 'Karla', sans-serif;
+}

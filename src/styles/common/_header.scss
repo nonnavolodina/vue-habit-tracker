@@ -1,0 +1,13 @@
+@import 'variables';
+
+.header {
+    background-color: $blue;
+    box-shadow: 8px 14px 13px -6px #D3D3D3;
+
+    &__title {
+        color: white;
+        font-size: 3.5em;
+        padding: 1em 0 1em 3em;
+        font-weight: bold;
+    }
+}
