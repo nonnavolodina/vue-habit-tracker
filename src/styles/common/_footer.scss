@@ -1,0 +1,42 @@
+@import 'variables';
+
+.footer {
+    background-color: $blue;
+    box-shadow: 8px -10px 13px -6px #D3D3D3;
+    position: absolute;
+    bottom: 0;
+    padding: 1.3em 0;
+    width: 100%;
+
+    &__copyright {
+        color: $white;
+        text-align: center;
+        font-size: 1.2em;
+    }
+
+    &__link {
+        &:hover {
+            color: $pink;
+        }
+    }
+}
+
+.social {
+    text-align: center;
+    margin-bottom: 0.5em;
+
+    &__links {
+        display: inline-block;
+        margin: 0 0.5em;
+    }
+
+    &__icons {
+        font-size: 2em;
+        color: white;
+
+        &:hover {
+            color: $pink;
+        }
+    }
+}
+

@@ -1,0 +1,29 @@
+@import '../common/variables';
+
+.habit-track {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2.5em;
+
+    &__input {
+        @include input;
+        border: 1px solid $pink;
+        color: $pink;
+        width: 75%;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    &__submit {
+        @include input;
+        background-color: $pink;
+        color: $white;
+        width: 23%;
+
+        &:hover {
+            background-color: $blue;
+        }
+    }
+}

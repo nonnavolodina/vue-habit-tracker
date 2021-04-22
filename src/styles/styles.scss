@@ -1,8 +1,10 @@
 @import '~reset-css-complete/reset.css';
 
 @import './common/header';
+@import './common/footer';
 @import './common/main';
 @import './common/variables';
+@import './components/habit-track';
 
 html {
     font-family: 'Karla', sans-serif;

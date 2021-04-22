@@ -4,3 +4,17 @@ $purple: #540D6E;
 $pink: #EE4266;
 $blue: #48A9A6; 
 $white: #FFF;
+
+// Mixins
+
+@mixin input {
+    border-radius: 50px;
+    font-size: 1.5em;
+    padding: 10px 15px;
+}
+
+@mixin copy {
+    font-size: 1.3em;
+    line-height: 1.5;
+    color: $black;
+}
