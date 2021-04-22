@@ -11,10 +11,23 @@
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
   <body>
-    <noscript>
-      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
-    </noscript>
+    <header class="header">
+        <h1 class="header__title">Vue Habit Tracker</h1>
+    </header>
     <div id="app"></div>
-    <!-- built files will be auto injected -->
+    <footer class="footer">
+        <div class="social">
+            <a class="social__links" href="mailto:hello@nvolodina.com" target="_blank">
+                <i class="social__icons fas fa-inbox"></i>
+            </a>
+            <a class="social__links" href="https://ca.linkedin.com/in/nonna-volodina-83367054" target="_blank">
+                <i class="social__icons fab fa-linkedin-in"></i>
+            </a>
+            <a class="social__links" href="https://github.com/nonnavolodina" target="_blank">
+                <i class="social__icons fab fa-github"></i>
+            </a>
+        </div>
+        <p class="footer__copyright">&copy; <a class="footer__link" href="http://nvolodina.com/">Nonna Volodina</a> 2021 </p>
+    </footer>
   </body>
 </html>
