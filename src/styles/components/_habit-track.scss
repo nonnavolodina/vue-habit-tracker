@@ -2,8 +2,13 @@
 
 .habit-track {
     display: flex;
-    justify-content: space-between;
-    margin-top: 2.5em;
+    flex-direction: column;
+    
+    &__form {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 2.5em;
+    }
 
     &__input {
         @include input;

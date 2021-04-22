@@ -1,7 +1,9 @@
 <template>
     <div class="habit-track">
-        <input v-model="habit" @input="setHabit" class="habit-track__input" type="text">
-        <button @click="showHabitTrackingPrompts" class="habit-track__submit">Submit</button>
+        <div class="habit-track__form">
+            <input v-model="habit" @input="setHabit" class="habit-track__input" type="text">
+            <button @click="showHabitTrackingPrompts" class="habit-track__submit">Submit</button>
+        </div>
         <div v-if="isHidden === true" class="habit-tracking-prompts">
             <div class="timeline">
                 <p class="timeline__description">How often do you want to track this habit?</p>
