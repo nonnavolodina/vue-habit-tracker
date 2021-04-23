@@ -10,12 +10,8 @@ html {
     font-family: 'Karla', sans-serif;
 }
 
-input[type="radio"] {
+input[type="radio"],
+input[type="checkbox"] {
     display: none;
-}
-
-input[type="radio"]:checked + label {
-    background-color: $pink;
-    color: $white;
 }
   

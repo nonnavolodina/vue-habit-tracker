@@ -15,6 +15,12 @@
         border: 1px solid $pink;
         color: $pink;
         width: 75%;
+
+        &::placeholder {
+            font-weight: 100;
+            font-size: 0.8em;
+            color: darken($grey, 15%);
+        }
     }
 
     &__submit {
@@ -30,7 +36,7 @@
 }
 
 .habit-tracking-prompts {
-    margin-top: 2em;
+    margin-top: 3em;
 
     .timeline {
         display: flex;
@@ -40,23 +46,83 @@
             margin-right: 1em;
         }
 
-        &__radio {
-            display: inline;
-        }
+        &__input {
+            display: none;
 
-        &__label {
-            display: inline-block;
-            padding: 10px;
-            background-color: $grey;
-            border-radius: 50px;
-            margin-right: 1.5em;
-            cursor: pointer;
-
-            &:hover {
+            &:checked + label {
                 background-color: $pink;
                 color: $white;
             }
         }
 
+        &__radio {
+            display: inline;
+        }
+
+        &__label {
+            @include radio-check-label;
+        }
+
+    }
+}
+
+.weekly-schedule {
+    display: flex;
+    flex-direction: column;
+
+    &__description {
+        @include copy;
+        margin-top: 2em;
+    }
+
+    &__form {
+        display: flex;
+        margin-top: 1em;
+    }
+
+    &__label {
+        @include radio-check-label;
+    }
+}
+
+.colour {
+    margin-top: 1em;
+
+    &__description {
+        @include copy;
+        margin-bottom: 1.5em;
+    }
+
+    &__radio {
+        display: inline;
+    }
+
+    &__input {
+
+        &:checked + label {
+
+            span {
+                transform: scale(1.75);    
+            }
+        }
+    }
+
+    &__label {
+        display: inline-block;
+        width: 25px;
+        height: 25px;
+        border-radius: 50px;
+        margin-right: 2em;
+        cursor: pointer;
+        transform: scale(1.25);
+        @each $name, $value in $colors {
+            &.#{$name} {
+              background: $value;
+            }
+        }
+
+        &:hover {
+            transform: scale(1.75);
+        }
     }
 }

@@ -1,10 +1,23 @@
-// Colours
+// Site Colours
 $black: #292E1E;
 $purple: #540D6E;
 $pink: #EE4266;
 $blue: #48A9A6; 
 $white: #FFF;
 $grey: #EEE;
+
+$colors: (
+  red: #DB2828,
+  orange: #F2711C,
+  yellow: #FBBD08,
+  olive: #B5CC18,
+  green: #21BA45,
+  teal: #00B5AD,
+  blue: #2185D0,
+  violet: #6435C9,
+  purple: #A333C8,
+  pink: #E03997
+);
 
 // Mixins
 
@@ -20,6 +33,21 @@ $grey: #EEE;
 
 @mixin copy {
     font-size: 1.3em;
+    font-weight: 500;
     line-height: 1.85;
     color: $black;
+}
+
+@mixin radio-check-label {
+    display: inline-block;
+    padding: 10px;
+    background-color: $grey;
+    border-radius: 50px;
+    margin-right: 1.5em;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $pink;
+        color: $white;
+    }
 }
