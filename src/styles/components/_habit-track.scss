@@ -80,6 +80,14 @@
         margin-top: 1em;
     }
 
+    &__input {
+        
+        &:checked + label {
+            background-color: $pink;
+            color: $white;
+        }
+    }
+
     &__label {
         @include radio-check-label;
     }

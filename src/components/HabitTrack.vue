@@ -22,36 +22,36 @@
                 <p class="weekly-schedule__description">Which days of the week do you want to {{ habit }}?</p>
                 <div class="weekly-schedule__form">
                     <div class="weekly-schedule__checkbox">
-                        <input id="sunday" class="weekly__schedule" type="checkbox" name="week" value="sunday" v-model="daysOfTheWeek" @click="showColoursPrompt">
+                        <input id="sunday" class="weekly-schedule__input" type="checkbox" name="week" value="sunday" v-model="daysOfTheWeek">
                         <label for="sunday" class="weekly-schedule__label">Sunday</label>
                     </div>
                     <div class="weekly-schedule__checkbox">
-                        <input id="monday" class="weekly__schedule" type="checkbox" name="week" value="monday" v-model="daysOfTheWeek" @click="showColoursPrompt">
+                        <input id="monday" class="weekly-schedule__input" type="checkbox" name="week" value="monday" v-model="daysOfTheWeek">
                         <label for="monday" class="weekly-schedule__label">Monday</label>
                     </div>
                     <div class="weekly-schedule__checkbox">
-                        <input id="tuesday" class="weekly__schedule" type="checkbox" name="week" value="tuesday" v-model="daysOfTheWeek" @click="showColoursPrompt">
+                        <input id="tuesday" class="weekly-schedule__input" type="checkbox" name="week" value="tuesday" v-model="daysOfTheWeek">
                         <label for="tuesday" class="weekly-schedule__label">Tuesday</label>
                     </div>
                     <div class="weekly-schedule__checkbox">
-                        <input id="wednesday" class="weekly__schedule" type="checkbox" name="week" value="wednesday" v-model="daysOfTheWeek" @click="showColoursPrompt">
+                        <input id="wednesday" class="weekly-schedule__input" type="checkbox" name="week" value="wednesday" v-model="daysOfTheWeek">
                         <label for="wednesday" class="weekly-schedule__label">Wednesday</label>
                     </div>
                     <div class="weekly-schedule__checkbox">
-                        <input id="thursday" class="weekly__schedule" type="checkbox" name="week" value="thursday" v-model="daysOfTheWeek" @click="showColoursPrompt">
+                        <input id="thursday" class="weekly-schedule__input" type="checkbox" name="week" value="thursday" v-model="daysOfTheWeek">
                         <label for="thursday" class="weekly-schedule__label">Thursday</label>
                     </div>
                     <div class="weekly-schedule__checkbox">
-                        <input id="friday" class="weekly__schedule" type="checkbox" name="week" value="friday" v-model="daysOfTheWeek" @click="showColoursPrompt">
+                        <input id="friday" class="weekly-schedule__input" type="checkbox" name="week" value="friday" v-model="daysOfTheWeek">
                         <label for="friday" class="weekly-schedule__label">Friday</label>
                     </div>
                     <div class="weekly-schedule__checkbox">
-                        <input id="saturday" class="weekly__schedule" type="checkbox" name="week" value="saturday" v-model="daysOfTheWeek" @click="showColoursPrompt">
+                        <input id="saturday" class="weekly-schedule__input" type="checkbox" name="week" value="saturday" v-model="daysOfTheWeek">
                         <label for="saturday" class="weekly-schedule__label">Saturday</label>
                     </div>
                 </div>
             </div>
-            <div v-if="coloursHidden === true || timeline === 'day'" class="colour">
+            <div v-if="timeline === 'week' || timeline === 'day'" class="colour">
                 <p class="colour__description">Pick a colour for your {{ habit }} goal:</p>
                 <div class="colour__form">
                     <div class="colour__radio">
@@ -143,9 +143,6 @@ export default {
         showWeeklySchedulePrompt() {
             this.weeklyScheduleHidden = !this.weeklyScheduleHidden;
         },
-        showColoursPrompt() {
-            this.coloursHidden = !this.coloursHidden;
-        }
     },
 
 };
