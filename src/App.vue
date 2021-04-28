@@ -7,7 +7,15 @@
             <p class="app__description-copy">Expert tip: Make sure your habit goal is specific. Instead of 'drink more water', your habit should aim for a certain goal. So instead of 'drink more water', you should try 'drink 8 glasses of water a day'.</p>
         </div>
         <p class="app__prompt">What habit would you like to track?</p>
-        <habit-track></habit-track>
+        <habit-track-form @add-habit="addHabit"></habit-track-form>
+        <habits 
+            v-for="hab in habits"
+            :key="hab.id"
+            :habit="hab.habit"
+            :timeline="hab.timeline"
+            :daysOfTheWeek="hab.daysOfTheWeek"
+            :colour="hab.colour">
+        </habits>
 	</main>
 </template>
 
@@ -15,6 +23,31 @@
 
 export default {
 	name: 'App',
+    data() {
+        return {
+            habits: [
+                {
+                    id: null,
+                    habit: '',
+                    timeline: '',
+                    daysOfTheWeek: [],
+                    colour: ''
+                },
+            ]
+        }
+    },
+    methods: {
+        addHabit(habit, timeline, daysOfTheWeek, colour) {
+            const newHabit = {
+                id: new Date().toISOString(),
+                habit: habit,
+                timeline: timeline,
+                daysOfTheWeek: daysOfTheWeek,
+                colour: colour
+            };
+            this.habits.push(newHabit);
+        }
+    }
 }
 </script>
 

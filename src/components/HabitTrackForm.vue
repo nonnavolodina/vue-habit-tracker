@@ -51,7 +51,7 @@
                     </div>
                 </div>
             </div>
-            <div v-if="timeline === 'week' || timeline === 'day'" class="colour">
+            <div v-if="daysOfTheWeek.length >= 1 || timeline === 'day'" class="colour">
                 <p class="colour__description">Pick a colour for your {{ habit }} goal:</p>
                 <div class="colour__form">
                     <div class="colour__radio">
@@ -115,6 +115,7 @@
                         </label>
                     </div>
                 </div>
+                <button v-if="colour !== ''" class="submit" @click="submitData">Start Tracking</button>
             </div>
         </div>
     </div>
@@ -122,6 +123,7 @@
 
 <script>
 export default {
+    emits: ['add-habit'],
     data() {
         return {
             habit: '',
@@ -130,10 +132,20 @@ export default {
             daysOfTheWeek: [],
             weeklyScheduleHidden: false,
             colour: '',
-            coloursHidden: false
+            coloursHidden: false,
+            submitButtonHidden: false
         };
     },
     methods: {
+        submitData() {
+            this.$emit(
+                'add-habit', 
+                this.habit, 
+                this.timeline, 
+                this.daysOfTheWeek, 
+                this.colour
+            );
+        },
         setHabit(event) {
             this.habit = event.target.value;
         },
