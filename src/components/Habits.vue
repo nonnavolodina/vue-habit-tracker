@@ -1,7 +1,7 @@
 <template>
-    <div>
-        <ul>
-            <li>{{ habit }}</li>
+    <div v-if="habit.length > 0" class="habits">
+        <ul class="habits__container">
+            <li class="habit">{{ habit }}</li>
         </ul>
     </div>
 </template>

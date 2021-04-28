@@ -58,82 +58,107 @@
         &__label {
             @include radio-check-label;
         }
-
-    }
-}
-
-.weekly-schedule {
-    display: flex;
-    flex-direction: column;
-
-    &__description {
-        @include copy;
-        margin-top: 2em;
     }
 
-    &__form {
+    .tracking-count {
+        margin-top: 3em;
         display: flex;
-        margin-top: 1em;
-    }
+        align-items: center;
 
-    &__input {
+        &__description {
+            @include copy;
+            margin-right: 1em;
+        }
 
-        &:checked + label {
+        &__input {
+            @include input;
+            border: 1px solid $pink;
+            color: $pink;
+            width: 4em;
+        }
+
+        &__submit {
+            @include input;
             background-color: $pink;
             color: $white;
+            width: 23%;
+            margin-left: 1em;
         }
     }
 
-    &__label {
-        @include radio-check-label;
+    .weekly-schedule {
+        display: flex;
+        flex-direction: column;
+    
+        &__description {
+            @include copy;
+            margin-top: 2em;
+        }
+    
+        &__form {
+            display: flex;
+            margin-top: 1em;
+        }
+    
+        &__input {
+    
+            &:checked + label {
+                background-color: $pink;
+                color: $white;
+            }
+        }
+    
+        &__label {
+            @include radio-check-label;
+        }
     }
-}
-
-.colour {
-    margin-top: 2em;
-
-    &__description {
-        @include copy;
-        margin-bottom: 1.5em;
-    }
-
-    &__radio {
-        display: inline;
-    }
-
-    &__input {
-
-        &:checked + label {
-
-            span {
-                transform: scale(1.75);    
+    
+    .colour {
+        margin-top: 2em;
+    
+        &__description {
+            @include copy;
+            margin-bottom: 1.5em;
+        }
+    
+        &__radio {
+            display: inline;
+        }
+    
+        &__input {
+    
+            &:checked + label {
+    
+                span {
+                    transform: scale(1.75);    
+                }
+            }
+        }
+    
+        &__label {
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            border-radius: 50px;
+            margin-right: 2em;
+            cursor: pointer;
+            transform: scale(1.25);
+            @each $name, $value in $colors {
+                &.#{$name} {
+                  background: $value;
+                }
+            }
+    
+            &:hover {
+                transform: scale(1.75);
             }
         }
     }
-
-    &__label {
-        display: inline-block;
-        width: 25px;
-        height: 25px;
-        border-radius: 50px;
-        margin-right: 2em;
-        cursor: pointer;
-        transform: scale(1.25);
-        @each $name, $value in $colors {
-            &.#{$name} {
-              background: $value;
-            }
-        }
-
-        &:hover {
-            transform: scale(1.75);
-        }
+    
+    .submit {
+        @include input;
+        background-color: $purple;
+        color: $white;
+        margin-top: 2em;
     }
-}
-
-.submit {
-    @include input;
-    background-color: $purple;
-    color: $white;
-    margin-top: 2em;
 }

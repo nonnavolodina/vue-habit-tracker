@@ -1,0 +1,14 @@
+@import '../common/variables';
+
+
+.habits {
+    margin-top: 2em;
+}
+.habit {
+    width: 100%;
+    background: $grey;
+    color: $black;
+    font-size: 2em;
+    padding: 10px 15px;
+    border-radius: 8px;
+}

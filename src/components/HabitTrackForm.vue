@@ -9,15 +9,22 @@
                 <p class="timeline__description">How often do you want to {{ habit }}?</p>
                 <div class="timeline__form">
                     <div class="timeline__radio">
-                        <input id="daily" class="timeline__input" type="radio" name="timeline" value="day" v-model="timeline" @click="showGoalPrompt">
+                        <input id="daily" class="timeline__input" type="radio" name="timeline" value="day" v-model="timeline" @click="showCounterPrompt">
                         <label for="daily" class="timeline__label">Daily</label>
                     </div>
                     <div class="timeline__radio">
-                        <input id="weekly" class="timeline__input" type="radio" name="timeline" value="week" v-model="timeline" @click="showGoalPrompt">
+                        <input id="weekly" class="timeline__input" type="radio" name="timeline" value="week" v-model="timeline" @click="showCounterPrompt">
                         <label for="weekly" class="timeline__label">Weekly</label>
                     </div>
                 </div>
             </div>
+            <!-- TODO: Get this working -->
+            <div v-if="counterHidden === true" class="tracking-count">
+                <p class="tracking-count__description">How many times a {{ timeline }} do you want to {{ habit }}?</p>
+                <input class="tracking-count__input" type="number" :max="timeline === week ? 7 : 10" min="1">
+                <button class="tracking-count__submit">Submit</button>
+            </div>
+            <!-- END TODO -->
             <div v-if="timeline === 'week'" class="weekly-schedule">
                 <p class="weekly-schedule__description">Which days of the week do you want to {{ habit }}?</p>
                 <div class="weekly-schedule__form">
@@ -133,7 +140,9 @@ export default {
             weeklyScheduleHidden: false,
             colour: '',
             coloursHidden: false,
-            submitButtonHidden: false
+            submitButtonHidden: false,
+            count: null,
+            counterHidden: false
         };
     },
     methods: {
@@ -155,6 +164,9 @@ export default {
         showWeeklySchedulePrompt() {
             this.weeklyScheduleHidden = !this.weeklyScheduleHidden;
         },
+        showCounterPrompt() {
+            this.counterHidden = !this.counterHidden;
+        }
     },
 
 };

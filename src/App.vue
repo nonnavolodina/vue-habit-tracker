@@ -8,14 +8,18 @@
         </div>
         <p class="app__prompt">What habit would you like to track?</p>
         <habit-track-form @add-habit="addHabit"></habit-track-form>
-        <habits 
-            v-for="hab in habits"
-            :key="hab.id"
-            :habit="hab.habit"
-            :timeline="hab.timeline"
-            :daysOfTheWeek="hab.daysOfTheWeek"
-            :colour="hab.colour">
-        </habits>
+        <hr>
+        <div class="my-habits">
+            <h2 class="my-habits__heading">My Habits</h2>
+                <habits 
+                    v-for="hab in habits"
+                    :key="hab.id"
+                    :habit="hab.habit"
+                    :timeline="hab.timeline"
+                    :daysOfTheWeek="hab.daysOfTheWeek"
+                    :colour="hab.colour">
+                </habits>
+        </div>
 	</main>
 </template>
 
@@ -33,7 +37,7 @@ export default {
                     daysOfTheWeek: [],
                     colour: ''
                 },
-            ]
+            ],
         }
     },
     methods: {
@@ -46,7 +50,7 @@ export default {
                 colour: colour
             };
             this.habits.push(newHabit);
-        }
+        },
     }
 }
 </script>

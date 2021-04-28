@@ -20,9 +20,16 @@
     }
 
     &__prompt {
+        @include heading;
         color: $purple;
-        font-size: 2.3em;
-        font-weight: bold;
-        text-align: center;
+    }
+}
+
+.my-habits {
+    padding-top: 3em;
+
+    &__heading {
+        @include heading;
+        color: $blue;
     }
 }

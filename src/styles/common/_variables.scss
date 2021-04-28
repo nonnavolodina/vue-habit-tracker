@@ -31,6 +31,12 @@ $colors: (
     }
 }
 
+@mixin heading {
+    font-size: 2.3em;
+    font-weight: bold;
+    text-align: center;
+}
+
 @mixin copy {
     font-size: 1.3em;
     font-weight: 500;
