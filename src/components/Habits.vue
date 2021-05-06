@@ -11,6 +11,7 @@ export default {
     props: {
         habit: String,
         timeline: String,
+        count: Number,
         daysOfTheWeek: Array,
         colour: String,
     }

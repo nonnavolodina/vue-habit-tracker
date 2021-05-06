@@ -15,6 +15,7 @@
                     v-for="hab in habits"
                     :key="hab.id"
                     :habit="hab.habit"
+                    :count="hab.count"
                     :timeline="hab.timeline"
                     :daysOfTheWeek="hab.daysOfTheWeek"
                     :colour="hab.colour">
@@ -34,18 +35,20 @@ export default {
                     id: null,
                     habit: '',
                     timeline: '',
+                    count: 1,
                     daysOfTheWeek: [],
-                    colour: ''
+                    colour: '',
                 },
             ],
         }
     },
     methods: {
-        addHabit(habit, timeline, daysOfTheWeek, colour) {
+        addHabit(habit, timeline, count, daysOfTheWeek, colour) {
             const newHabit = {
                 id: new Date().toISOString(),
                 habit: habit,
                 timeline: timeline,
+                count: count,
                 daysOfTheWeek: daysOfTheWeek,
                 colour: colour
             };

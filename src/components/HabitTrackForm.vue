@@ -18,14 +18,12 @@
                     </div>
                 </div>
             </div>
-            <!-- TODO: Get this working -->
             <div v-if="counterHidden === true" class="tracking-count">
                 <p class="tracking-count__description">How many times a {{ timeline }} do you want to {{ habit }}?</p>
-                <input class="tracking-count__input" type="number" :max="timeline === week ? 7 : 10" min="1">
-                <button class="tracking-count__submit">Submit</button>
+                <input class="tracking-count__input" type="number" v-model.number="count" :max="timeline === week ? 7 : 10" min=1>
+                <button @click="showWeeklySchedulePrompt" class="tracking-count__submit">Submit</button>
             </div>
-            <!-- END TODO -->
-            <div v-if="timeline === 'week'" class="weekly-schedule">
+            <div v-if="timeline === 'week' && weeklyScheduleHidden === true" class="weekly-schedule">
                 <p class="weekly-schedule__description">Which days of the week do you want to {{ habit }}?</p>
                 <div class="weekly-schedule__form">
                     <div class="weekly-schedule__checkbox">
@@ -141,7 +139,7 @@ export default {
             colour: '',
             coloursHidden: false,
             submitButtonHidden: false,
-            count: null,
+            count: 1,
             counterHidden: false
         };
     },
@@ -150,7 +148,8 @@ export default {
             this.$emit(
                 'add-habit', 
                 this.habit, 
-                this.timeline, 
+                this.timeline,
+                this.count, 
                 this.daysOfTheWeek, 
                 this.colour
             );

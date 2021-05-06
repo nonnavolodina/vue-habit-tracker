@@ -4,6 +4,7 @@
 .habits {
     margin-top: 2em;
 }
+
 .habit {
     width: 100%;
     background: $grey;
@@ -11,4 +12,14 @@
     font-size: 2em;
     padding: 10px 15px;
     border-radius: 8px;
+    position: relative;
+    cursor: pointer;
+
+    &::after {
+        content: '+';
+        position: absolute;
+        right: 20px;
+        font-weight: bold;
+        color: darken($grey, 25%);
+    }
 }
