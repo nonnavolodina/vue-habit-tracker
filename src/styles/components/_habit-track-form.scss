@@ -27,7 +27,7 @@
         @include input;
         background-color: $pink;
         color: $white;
-        width: 23%;
+        width: 20%;
     }
 }
 
@@ -74,14 +74,14 @@
             @include input;
             border: 1px solid $pink;
             color: $pink;
-            width: 4em;
+            width: 3em;
         }
 
         &__submit {
             @include input;
             background-color: $pink;
             color: $white;
-            width: 23%;
+            width: 20%;
             margin-left: 1em;
         }
     }

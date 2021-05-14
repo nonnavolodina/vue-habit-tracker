@@ -11,6 +11,13 @@ html {
     font-family: 'Karla', sans-serif;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    height: 100vh;
+}
+
 input[type="radio"],
 input[type="checkbox"] {
     display: none;

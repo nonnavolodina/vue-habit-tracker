@@ -4,7 +4,7 @@
     border: 1px solid #dfdfdf;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
     margin: 3rem auto;
-    max-width: 1024px;
+    max-width: 1280px;
     padding: 5em;
     width: 100%;
 
@@ -15,6 +15,15 @@
         padding-bottom: 1em;
     }
 
+    &__main {
+        display: flex;
+    }
+
+    &__form {
+        width: 60%;
+        padding: 0 2em;
+    }
+
     &__description-copy {
         margin-bottom: 0.6em;
     }
@@ -22,14 +31,17 @@
     &__prompt {
         @include heading;
         color: $purple;
+        text-align: left;
     }
 }
 
 .my-habits {
-    padding-top: 3em;
+    width: 40%;
+    padding: 0 3em;
 
     &__heading {
         @include heading;
         color: $blue;
+        text-align: left;
     }
 }

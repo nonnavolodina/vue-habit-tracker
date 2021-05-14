@@ -56,7 +56,7 @@
                     </div>
                 </div>
             </div>
-            <div v-if="daysOfTheWeek.length >= 1 || timeline === 'day'" class="colour">
+            <div v-if="daysOfTheWeek.length >= 1 || (timeline === 'day' && weeklyScheduleHidden === true)" class="colour">
                 <p class="colour__description">Pick a colour for your {{ habit }} goal:</p>
                 <div class="colour__form">
                     <div class="colour__radio">
