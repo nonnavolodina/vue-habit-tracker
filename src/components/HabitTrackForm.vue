@@ -1,7 +1,7 @@
 <template>
     <div class="habit-track">
         <div class="habit-track__form">
-            <input v-model="habit" @input="setHabit" @keyup.enter="showTimelinePrompt" placeholder="Examples: walk 30 minutes a day, drink more water" class="habit-track__input" type="text">
+            <input v-model="habit" @input="setHabit" @keyup.enter="showTimelinePrompt" placeholder="Example: drink more water" class="habit-track__input" type="text">
             <button @click="showTimelinePrompt" class="habit-track__submit">Submit</button>
         </div>
         <div class="habit-tracking-prompts">
@@ -60,61 +60,61 @@
                 <p class="colour__description">Pick a colour for your {{ habit }} goal:</p>
                 <div class="colour__form">
                     <div class="colour__radio">
-                        <input id="red" class="colur__input colour__input--red;" type="radio" name="colur" value="red" v-model="colur">
+                        <input id="red" class="colur__input colour__input--red;" type="radio" name="colour" value="#DB2828" v-model="colour">
                         <label for="red">
                             <span class="colour__label red"></span>
                         </label>
                     </div>
                     <div class="colour__radio">
-                        <input id="green" class="colour__input" type="radio" name="colour" value="green" v-model="colour">
+                        <input id="green" class="colour__input" type="radio" name="colour" value="#21BA45" v-model="colour">
                         <label for="green">
                             <span class="colour__label green"></span>
                         </label>
                     </div>
                     <div class="colour__radio">
-                        <input id="yellow" class="colour__input" type="radio" name="colour" value="yellow" v-model="colour">
+                        <input id="yellow" class="colour__input" type="radio" name="colour" value="#FBBD08" v-model="colour">
                         <label for="yellow">
                             <span class="colour__label yellow"></span>
                         </label>
                     </div>
                     <div class="colour__radio">
-                        <input id="olive" class="colour__input" type="radio" name="colour" value="olive" v-model="colour">
+                        <input id="olive" class="colour__input" type="radio" name="colour" value="#B5CC18" v-model="colour">
                         <label for="olive">
                             <span class="colour__label olive"></span>
                         </label>
                     </div>
                     <div class="colour__radio">
-                        <input id="orange" class="colour__input" type="radio" name="colour" value="orange" v-model="colour">
+                        <input id="orange" class="colour__input" type="radio" name="colour" value="#F2711C" v-model="colour">
                         <label for="orange">
                             <span class="colour__label orange"></span>
                         </label>
                     </div>
                     <div class="colour__radio">
-                        <input id="teal" class="colour__input" type="radio" name="colour" value="teal" v-model="colour">
+                        <input id="teal" class="colour__input" type="radio" name="colour" value="#00B5AD" v-model="colour">
                         <label for="teal">
                             <span class="colour__label teal"></span>
                         </label>
                     </div>
                     <div class="colour__radio">
-                        <input id="blue" class="colour__input" type="radio" name="colour" value="blue" v-model="colour">
+                        <input id="blue" class="colour__input" type="radio" name="colour" value="#2185D0" v-model="colour">
                         <label for="blue">
                             <span class="colour__label blue"></span>
                         </label>
                     </div>
                     <div class="colour__radio">
-                        <input id="violet" class="colour__input" type="radio" name="colour" value="violet" v-model="colour">
+                        <input id="violet" class="colour__input" type="radio" name="colour" value="#6435C9" v-model="colour">
                         <label for="violet">
                             <span class="colour__label violet"></span>
                         </label>
                     </div>
                     <div class="colour__radio">
-                        <input id="purple" class="colour__input" type="radio" name="colour" value="purple" v-model="colour">
+                        <input id="purple" class="colour__input" type="radio" name="colour" value="#A333C8" v-model="colour">
                         <label for="purple">
                             <span class="colour__label purple"></span>
                         </label>
                     </div>
                     <div class="colour__radio">
-                        <input id="pink" class="colour__input" type="radio" name="colour" value="pink" v-model="colour">
+                        <input id="pink" class="colour__input" type="radio" name="colour" value="#E03997" v-model="colour">
                         <label for="pink">
                             <span class="colour__label pink"></span>
                         </label>
